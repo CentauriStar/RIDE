@@ -36,13 +36,13 @@ python setup.py develop
 
 ### Dataset Preparation
 - #### KITTI Dataset
-Please download the [official KITTI dataset](https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d) with [road plane](https://drive.google.com/file/d/1d5mq0RXRnvHPVeKx6Q612z0YRO1t2wAp/view?usp=sharing) data, and organize the files as:
+Please download the [official KITTI dataset](https://www.cvlibs.net/datasets/kitti/eval_object.php?obj_benchmark=3d) (**w/o plane data**), and organize the files as:
 ```
   ├── data
   │   ├── kitti
   │   │   │── ImageSets
   │   │   │── training
-  │   │   │   ├──calib & velodyne & label_2 & image_2 & planes
+  │   │   │   ├──calib & velodyne & label_2 & image_2
   │   │   │── testing
   │   │   │   ├──calib & velodyne & image_2
   ├── pcdet
@@ -86,7 +86,7 @@ python train.py --cfg_file ${CONFIG_FILE}
 # Multiple GPUs
 sh scripts/dist_train.sh ${NUM_GPUS} --cfg_file ${CONFIG_FILE}
 ```
-We provide the pre-trained [IA-SSD](https://drive.google.com/file/d/1I7ggk0DjiKY52X5HjSdH_Mb5k3fXYFFC/view?usp=sharing) model on KITTI.
+We provide the pre-trained [IA-SSD](https://drive.google.com/file/d/1W3039m-M4wJghH3MiEudMtXnfUhd1UAU/view?usp=sharing) model on KITTI.
 
 To test a trained model, please run the following command:
 ```
